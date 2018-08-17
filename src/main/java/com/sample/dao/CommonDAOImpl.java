@@ -5,21 +5,18 @@ import java.sql.Connection;
 import javax.sql.DataSource;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.stereotype.Repository;
 
-@Repository
+
 public class CommonDAOImpl implements CommonDAO {
 
 	@Autowired
-	@Qualifier("dbDataSource")
-	private DataSource ds;
+	private DataSource dbDataSource;
 	
 	public Connection getDBConnection() {
 		Connection conn=null;
 		try {
 			/*System.out.println("getDBConnection");*/
-			conn=ds.getConnection();
+			conn=dbDataSource.getConnection();
 		  } catch (Exception e) {
 			e.printStackTrace();
 		  }

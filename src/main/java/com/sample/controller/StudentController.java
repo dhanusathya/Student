@@ -17,25 +17,25 @@ import com.sample.service.StudentService;
 
 
 @Controller
-@RequestMapping(value="/student")
+@RequestMapping(value="/ctrl")
 public class StudentController {
 	
 	@Autowired
 	StudentService studentService;
 	
 	
-	@RequestMapping(value = "/addUser")
+	@RequestMapping(value = "/addStudent")
 	public ModelAndView addUser(){
 		
-		return new ModelAndView("addUser");
+		return new ModelAndView("addStudent");
 	}
-	@RequestMapping(value = "/new_user")
-	public @ResponseBody String newUser(@RequestParam String student_name, @RequestParam String father_name, @RequestParam String section, @RequestParam String type_of_student){
+	@RequestMapping(value = "/new_Student")
+	public @ResponseBody String newStudent(@RequestParam String student_name, @RequestParam String father_name, @RequestParam String section, @RequestParam String type_of_student){
 		System.out.println("Student Name : "+student_name);
 		System.out.println("Father's Name : "+father_name);
 		System.out.println("Section : "+section);
 		System.out.println("Type of student : "+type_of_student);
-		String msg=studentService.addNewUser(student_name,father_name, section, type_of_student);
+		String msg=studentService.addNewStudent(student_name,father_name, section, type_of_student);
 		String str=(msg != null && !msg.equals("") && msg.equalsIgnoreCase("success") ? "Student details created successfully":"Failed to create new student details");
 		return str;
 		}

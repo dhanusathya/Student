@@ -8,8 +8,8 @@
 </head>
 <body>
 
-<a href="student/addUser.htm"><input type="button" value="Add Student" id="userBtn"/></a>
-<a href="student/updateStudent.htm"><input type="button" value="Update Student" id="updateBtn"/></a>
+<a href="ctrl/addStudent.htm"><input type="button" value="Add Student" id="userBtn"/></a>
+<a href="ctrl/updateStudent.htm"><input type="button" value="Update Student" id="updateBtn"/></a>
 
 </body>
 </html>

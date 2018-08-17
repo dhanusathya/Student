@@ -8,31 +8,9 @@
 	 http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
         http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
         http://www.springframework.org/schema/mvc
-        http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd">
-
-   
-	<mvc:annotation-driven />
-	<context:annotation-config />
-	<context:component-scan base-package="com.sample" />
-		
-    <bean id="viewResolver"
-    	class="org.springframework.web.servlet.view.InternalResourceViewResolver" >
-        <property name="prefix">
-            <value>/WEB-INF/jsp/</value>
-        </property>
-        <property name="suffix">
-            <value>.jsp</value>
-        </property>
-    </bean>
+        http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd">   
+	
     
-    <bean id="tilesConfigurer"
-         class="org.springframework.web.servlet.view.tiles3.TilesConfigurer">  
-        <property name="definitions">
-            <list>
-                <value>/WEB-INF/tiles.xml</value>
-            </list>
-        </property>
-    </bean>
     <bean id="dbDataSource" class="org.springframework.jndi.JndiObjectFactoryBean">
     	<property name="jndiName" value="java:comp/env/jdbc/MyLocalDB"/>
 	</bean>

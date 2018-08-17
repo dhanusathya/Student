@@ -29,5 +29,6 @@
 			<attribute name="owner.project.facets" value="java"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/dhanus/.m2/repository/junit/junit/4.12/junit-4.12.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

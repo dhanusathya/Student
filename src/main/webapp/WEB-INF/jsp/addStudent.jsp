@@ -69,7 +69,7 @@ div.divStyle {
     var section = $('#section').val();
     var type_of_student = $('#type_of_student').val();
     var studentId=$("#studentId").val();
-    var urlVal="/student/new_user.htm";
+    var urlVal="/ctrl/new_student.htm";
     if(studentId != "" && studentId != undefined){
     	urlVal="/student/update_student.htm";
     }	
@@ -97,7 +97,7 @@ div.divStyle {
 	    $.ajax({  
 	     type : "Get", 
 	     dataType: 'JSON',
-	     url : contextPath+"/student/view_student.htm",   
+	     url : contextPath+"/ctrl/view_student.htm",   
 	     data : "student_name=" + student_name + "&father_name=" + father_name + "&section=" + section + "&type_of_student=" + type_of_student ,  
 	     contentType: "application/json",
 	     success : function(response) {  
@@ -129,7 +129,7 @@ div.divStyle {
    function deleteStudent(studentID){
 	   $.ajax({  
 		     type : "Get", 
-		     url : contextPath+"/student/delete_student.htm",   
+		     url : contextPath+"/ctrl/delete_student.htm",   
 		     data : "studentId=" + studentID ,  
 		     contentType: "application/json",
 		     success : function(response) {  

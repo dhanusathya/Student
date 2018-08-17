@@ -7,23 +7,22 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Repository;
 
 import com.sample.model.Student;
 
-@Repository
+
 public class StudentDAOImpl implements StudentDAO {
 	@Autowired
-	CommonDAO comonDAO;
+	CommonDAO commonDAO;
 		
 	
-	public String addNewUser(String student_name, String father_name,
+	public String addNewStudent(String student_name, String father_name,
 			String section, String type_of_student) { 
 		String returnVal="failed";
 		Connection con = null;
 		PreparedStatement stmt=null;
 		try{
-			con = comonDAO.getDBConnection();
+			con = commonDAO.getDBConnection();
             stmt = con.prepareStatement("insert into Student (student_name, father_name, section, type_of_student) values(?,?,?,?)");
             stmt.setObject(1, student_name);
             stmt.setObject(2, father_name);
@@ -60,7 +59,7 @@ public class StudentDAOImpl implements StudentDAO {
 			 Connection con=null;
 			 PreparedStatement stmt=null;
 			try{
-				con = comonDAO.getDBConnection();
+				con = commonDAO.getDBConnection();
 	            stmt = con.prepareStatement("UPDATE Student SET student_name=?, father_name=?, section=?, type_of_student=? WHERE id=?");
 	            stmt.setObject(1, student_name);
 	            stmt.setObject(2, father_name);
@@ -95,7 +94,7 @@ public class StudentDAOImpl implements StudentDAO {
 		List<Student> list=new ArrayList<Student>();
 		
 		try{
-			con = comonDAO.getDBConnection();
+			con = commonDAO.getDBConnection();
            stmt = con.prepareStatement("select student_name,father_name, section, type_of_student,id from student");
            ResultSet rs=stmt.executeQuery();
            while(rs != null && rs.next()){
@@ -132,7 +131,7 @@ public class StudentDAOImpl implements StudentDAO {
 		 Connection con=null;
 		 PreparedStatement stmt=null;
 		try{
-			con = comonDAO.getDBConnection();
+			con = commonDAO.getDBConnection();
            stmt = con.prepareStatement("Delete from Student WHERE id=?");
            stmt.setObject(1, studentId);
            /*System.out.println(stmt.toString());*/
