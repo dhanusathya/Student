@@ -6,10 +6,10 @@ import com.sample.model.Student;
 
 
 
-public interface StudentDAO {
+public interface StudentDAO extends BaseDao{
 
-	String addNewStudent(String student_name, String father_name, String section,
-			String type_of_student);
+	String addNewStudent(String student_name, String father_name,
+			String section, String type_of_student);
 
 	String update_student(String student_name, String father_name,
 			String section, String type_of_student, String studentId);

@@ -14,8 +14,11 @@
 	<mvc:annotation-driven />
 	<context:annotation-config />
 	<context:component-scan base-package="com.sample" />
-		
-    <bean id="viewResolver"
+	 
+	    <import resource="applicationContext-dao.xml"/>
+        <import resource="applicationContext-service.xml"/>
+ 	      
+        <bean id="viewResolver"
     	class="org.springframework.web.servlet.view.InternalResourceViewResolver" >
         <property name="prefix">
             <value>/WEB-INF/jsp/</value>
@@ -25,6 +28,7 @@
         </property>
     </bean>
     
+       
     <bean id="tilesConfigurer"
          class="org.springframework.web.servlet.view.tiles3.TilesConfigurer">  
         <property name="definitions">
@@ -33,10 +37,5 @@
             </list>
         </property>
     </bean>
-    <bean id="dbDataSource" class="org.springframework.jndi.JndiObjectFactoryBean">
-    	<property name="jndiName" value="java:comp/env/jdbc/MyLocalDB"/>
-	</bean>
-    <bean id="studentDAO" class="com.sample.dao.StudentDAOImpl" autowire="byName"/>
-    <bean id="commonDAO" class="com.sample.dao.CommonDAOImpl" autowire="byName"/>
-   
-</beans>
+    
+   </beans>

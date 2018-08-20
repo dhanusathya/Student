@@ -18,7 +18,8 @@ public class StudentServiceImpl implements StudentService{
 	
 	public String addNewStudent(String student_name, String father_name,
 			String section, String type_of_student) {
-		return studentDAO.addNewStudent(student_name, father_name,section, type_of_student);
+		
+		return studentDAO.addNewStudent(student_name, father_name, section, type_of_student);
 	}
 
 	

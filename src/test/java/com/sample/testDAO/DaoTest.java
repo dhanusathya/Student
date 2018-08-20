@@ -9,7 +9,7 @@ import com.sample.dao.StudentDAO;
 
 
 
-public class DaoTest extends BaseIntegrationTest {
+public class DaoTest extends BaseDaoTest {
 	
 	@Autowired
 	StudentDAO studentDAO;

@@ -6,8 +6,8 @@ import com.sample.model.Student;
 
 public interface StudentService {
 	
-	String addNewStudent(String student_name, String father_name, String section,
-			String type_of_student);
+	public String addNewStudent(String student_name, String father_name,
+			String section, String type_of_student);
 
 	String update_student(String student_name, String father_name,
 			String section, String type_of_student, String studentId);

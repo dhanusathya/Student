@@ -29,7 +29,7 @@ public class StudentController {
 		
 		return new ModelAndView("addStudent");
 	}
-	@RequestMapping(value = "/new_Student")
+	@RequestMapping(value = "/new_student")
 	public @ResponseBody String newStudent(@RequestParam String student_name, @RequestParam String father_name, @RequestParam String section, @RequestParam String type_of_student){
 		System.out.println("Student Name : "+student_name);
 		System.out.println("Father's Name : "+father_name);

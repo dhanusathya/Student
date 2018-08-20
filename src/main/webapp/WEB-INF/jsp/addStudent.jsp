@@ -71,7 +71,7 @@ div.divStyle {
     var studentId=$("#studentId").val();
     var urlVal="/ctrl/new_student.htm";
     if(studentId != "" && studentId != undefined){
-    	urlVal="/student/update_student.htm";
+    	urlVal="/ctrl/update_student.htm";
     }	
      $.ajax({
      type : "Post",   
