@@ -15,6 +15,6 @@
     	<property name="jndiName" value="java:comp/env/jdbc/MyLocalDB"/>
 	</bean>
     <bean id="studentDAO" class="com.sample.dao.StudentDAOImpl" autowire="byName"/>
-    <bean id="commonDAO" class="com.sample.dao.CommonDAOImpl" autowire="byName"/>
+    
    
 </beans>

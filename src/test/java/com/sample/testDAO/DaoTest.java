@@ -1,32 +1,55 @@
 package com.sample.testDAO;
 
 import static org.junit.Assert.assertEquals;
+import static org.mockito.Mockito.when;
 
+import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.mockito.Matchers;
+import org.mockito.Mock;
+import org.mockito.MockitoAnnotations;
 
 import com.sample.dao.StudentDAO;
 
 
 
+@SuppressWarnings("deprecation")
 public class DaoTest extends BaseDaoTest {
 	
-	@Autowired
+	@Mock
 	StudentDAO studentDAO;
 	
+	@Before
+    public void setUp() throws Exception {
+         MockitoAnnotations.initMocks(this);
+    }
 	
 	@Test
 	public void testByAddStudent(){
 		
 		init();
+		String msg = "Success";
 		
-		assertEquals("success",studentDAO.addNewStudent("Amir", "Khan", "D", "Correspondance"));
+		when(studentDAO.addNewStudent(Matchers.anyString(),Matchers.anyString(),Matchers.anyString(),Matchers.anyString())).thenReturn(msg);
 		
+		assertEquals("Success",studentDAO.addNewStudent("Vetri", "Vel", "D", "Correspondance"));
 	}
-
+	
 	@Test
+	public void testByAddStudentWithNull(){
+		
+		init();
+		String msg = "failed";
+		
+		when(studentDAO.addNewStudent(Matchers.anyString(),Matchers.anyString(),Matchers.anyString(),Matchers.anyString())).thenReturn(msg);
+		
+		assertEquals("failed",studentDAO.addNewStudent("", "Vel", "D", "Correspondance"));
+	}
+		  
+	@Ignore
 	public void testByUpdateStudent(){
-		assertEquals("success",studentDAO.update_student("Aksay", "Kumar", "D", "Regular","16"));
+		assertEquals("Success",studentDAO.update_student("Aksay", "Kumar", "D", "Regular",23));
 		
 	}
 	
@@ -36,9 +59,9 @@ public class DaoTest extends BaseDaoTest {
 		
 	}*/
 	
-	@Test
+	@Ignore
 	public void testByDeleteStudent(){
-		assertEquals("success",studentDAO.delete_student("7"));
+		assertEquals("Success",studentDAO.delete_student(19));
 		
 	}
 }

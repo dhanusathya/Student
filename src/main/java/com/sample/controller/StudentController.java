@@ -48,7 +48,7 @@ public class StudentController {
 	}
 	
 	@RequestMapping(value ="/update_student")
-    public @ResponseBody String updateStudent(@RequestParam String student_name, @RequestParam String father_name, @RequestParam String section, @RequestParam String type_of_student,  @RequestParam String studentId) throws SQLException{
+    public @ResponseBody String updateStudent(@RequestParam String student_name, @RequestParam String father_name, @RequestParam String section, @RequestParam String type_of_student,  @RequestParam int studentId) throws SQLException{
 		String msg=studentService.update_student(student_name,father_name, section, type_of_student, studentId);
 		String str=(msg != null && !msg.equals("") && msg.equalsIgnoreCase("success") ? "Student details successfully updated":"Failed to update student details");
 		return str;
@@ -67,7 +67,7 @@ public class StudentController {
 	}
 	
 	@RequestMapping(value = "/delete_student")
-	public @ResponseBody String delete_student( @RequestParam String studentId) throws SQLException{
+	public @ResponseBody String delete_student( @RequestParam int studentId) throws SQLException{
 		System.out.println("studentId : "+studentId);
 		String msg=studentService.delete_student(studentId);
 		String str=(msg != null && !msg.equals("") && msg.equalsIgnoreCase("success") ? "Student details successfully deleted":"Failed to delete student details");

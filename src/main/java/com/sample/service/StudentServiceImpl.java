@@ -24,7 +24,7 @@ public class StudentServiceImpl implements StudentService{
 
 	
 	public String update_student(String student_name, String father_name,
-			String section, String type_of_student, String studentId) {
+			String section, String type_of_student, int studentId) {
 		
 		return studentDAO.update_student(student_name, father_name, section, type_of_student, studentId);
 	}
@@ -37,7 +37,7 @@ public class StudentServiceImpl implements StudentService{
 	}
 
 	
-	public String delete_student(String studentId) {
+	public String delete_student(int studentId) {
 		return studentDAO.delete_student(studentId);
 	}
 

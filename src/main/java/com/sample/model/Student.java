@@ -5,7 +5,7 @@ public class Student {
 	String father_name;
 	String section;
 	String type_of_student;
-	String id;
+	int id;
 	
 	public String getStudentName() {
 		return student_name;
@@ -31,10 +31,10 @@ public class Student {
 	public void setTypeOfStudent(String type_of_student) {
 		this.type_of_student = type_of_student;
 	}
-	public String getId() {
+	public int getId() {
 		return id;
 	}
-	public void setId(String id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 	

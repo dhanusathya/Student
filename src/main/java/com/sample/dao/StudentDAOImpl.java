@@ -12,6 +12,9 @@ public class StudentDAOImpl extends BaseDaoImpl implements StudentDAO {
 			String section, String type_of_student) {
 		
 		String returnVal="failed";
+		if(null == student_name || student_name.isEmpty()){
+			return returnVal;
+		}
 		String SQL ="INSERT INTO student(student_name,father_name,section,type_of_student) VALUES(?,?,?,?)";
 		int update = getJdbcTemplate().update(SQL, new Object[]{student_name, father_name,
 				section, type_of_student});
@@ -26,7 +29,7 @@ public class StudentDAOImpl extends BaseDaoImpl implements StudentDAO {
 
 	
 	public String update_student(String student_name, String father_name,
-			String section, String type_of_student, String studentId) {
+			String section, String type_of_student, int studentId) {
 		
 			 String returnVal="failed";
 			String SQL = "UPDATE Student SET student_name=?, father_name=?, section=?, type_of_student=? WHERE id=?" ;
@@ -50,7 +53,7 @@ public class StudentDAOImpl extends BaseDaoImpl implements StudentDAO {
        }
 
 	
-	public String delete_student(String studentId) {
+	public String delete_student(int studentId) {
 		
 		String returnVal="failed";
 		String SQL = "Delete from student where id=?";
@@ -62,6 +65,6 @@ public class StudentDAOImpl extends BaseDaoImpl implements StudentDAO {
 		return returnVal;
 
 	}
-	
+
 
 }
