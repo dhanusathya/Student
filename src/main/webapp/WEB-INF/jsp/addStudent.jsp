@@ -119,8 +119,9 @@ div.divStyle {
 	    });  
 	   }  
    doAjaxPostview();
+   
    function editStudent(studentid, name, fatherName, section, type){
-	   $("#studentId").val(studentid);
+	   $("#studentId").val(studentid);     
 	   $("#student_name").val(name);
 	   $("#father_name").val(fatherName);
 	   $("#section").val(section);

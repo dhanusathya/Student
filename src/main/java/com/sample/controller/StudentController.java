@@ -29,6 +29,7 @@ public class StudentController {
 		
 		return new ModelAndView("addStudent");
 	}
+	
 	@RequestMapping(value = "/new_student")
 	public @ResponseBody String newStudent(@RequestParam String student_name, @RequestParam String father_name, @RequestParam String section, @RequestParam String type_of_student){
 		System.out.println("Student Name : "+student_name);
@@ -56,7 +57,7 @@ public class StudentController {
 	
 	
 	@RequestMapping(value = "/viewStudent")
-	public ModelAndView viewPlayer(@RequestParam String name){
+	public ModelAndView viewStudent(@RequestParam String name){
 		System.out.println("name: "+name);
 		return new ModelAndView("/viewStudent");
 	}
